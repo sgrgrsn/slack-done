@@ -11,5 +11,6 @@
   "dependencies": {
     "inquirer": "^2.0.0",
     "request": "^2.79.0"
-  }
+  },
+  "bin": "./index.js"
 }
