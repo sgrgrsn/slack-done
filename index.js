@@ -47,7 +47,7 @@ function sendToSlack(tasks) {
   var baseUrl = 'https://slack.com/api/chat.postMessage';
   var token = config['token'];
   var channel = 'emplate-udvikling';
-  var asUser = true
+  var asUser = true;
   var text = '';
 
   for (var i = 0; i < doneTasks.length; i++) {
