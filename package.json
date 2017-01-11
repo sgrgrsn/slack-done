@@ -1,14 +1,14 @@
 {
   "name": "slack-done",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use this simple CLI to tell your team which tasks you have finished!",
   "main": "index.js",
   "scripts": {
     "postinstall": "node post-install.js"
   },
-  "author": { 
-    "name" : "Søren Gregersen",
-    "email" : "s@grgrsn.dk"
+  "author": {
+    "name": "Søren Gregersen",
+    "email": "s@grgrsn.dk"
   },
   "contributors": [
     {
