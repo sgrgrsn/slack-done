@@ -4,19 +4,22 @@ var fs = require('fs');
 promptForToken();
 
 function promptForToken() {
-    var question = {
-        type: 'input',
-        name: 'token',
-        message: 'What is your Slack api token? Goto: https://api.slack.com/docs/oauth-test-tokens'
-    };
+    var questions = [
+        {
+            type: 'input',
+            name: 'token',
+            message: 'What is your Slack api token? 🔐  (Get a token here: https://api.slack.com/docs/oauth-test-tokens)'
+        },
+        {
+            type: 'input',
+            name: 'channel',
+            message: 'Which Slack channel do you want to use? 📢 '
+        }
+    ];
 
 
-    inquirer.prompt(question).then(function (answer) {
-        var config = {
-            token: answer.token
-        };
-
-        writeConfigToFile(config);
+    inquirer.prompt(questions).then(function (answers) {
+        writeConfigToFile(answers);
     });
 }
 
