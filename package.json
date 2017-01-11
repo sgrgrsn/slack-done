@@ -1,7 +1,7 @@
 {
   "name": "slack-done",
   "version": "1.0.0",
-  "description": "This is a small CLI to make it easy to tell your team when you finish up some tasks. The package will ask you about your done tasks and send a nice formatted message to a Slack channel of your choice.",
+  "description": "Use this simple CLI to tell your team which tasks you have finished!",
   "main": "index.js",
   "scripts": {
     "postinstall": "node post-install.js"
