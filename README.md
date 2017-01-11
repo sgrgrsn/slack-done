@@ -9,7 +9,7 @@ Simply hit `slack-done` and tell what you have done. The package will then send 
 ### How to install
 1. Install the npm package globally: `npm install slack-done -g`
 
-2. Enter your Slack API key (You can [create a test token here](https://api.slack.com/docs/oauth-test-tokens))
+2. Enter your Slack API token (You can [create a test token here](https://api.slack.com/docs/oauth-test-tokens))
 
 3. Enter the channel name you want the messages to be sent to
 
