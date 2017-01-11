@@ -48,22 +48,8 @@ function sendToSlack(tasks) {
   var token = config['token'];
   var channel = config['channel'];
   var asUser = true;
-  var text = '';
-
-  for (var i = 0; i < doneTasks.length; i++) {
-    text = text + '✅ ' + doneTasks[i] + '\n';
-  }
-
-  var attachments = [
-    {
-      "pretext": ":tada: Ny opgave fuldført! :tada:", 
-      "text": text
-    }
-  ];
-
-  var encodedAttachments = encodeURIComponent(JSON.stringify(attachments));
   
-  var url = baseUrl + '?token=' + token + '&channel=' + channel + '&attachments=' + encodedAttachments + '&as_user=' + asUser;
+  var url = baseUrl + '?token=' + token + '&channel=' + channel + '&attachments=' + getAttachment() + '&as_user=' + asUser;
   
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -71,12 +57,46 @@ function sendToSlack(tasks) {
 
       if (parsedBody.ok) {
         console.log('The following tasks are sucessfully sent to Slack 🎉');
-        console.log(text);
+        console.log(getText());
       } else {
         console.log('Slack error.. 💩');
       }
     } else {
+      console.log('Something went wrong.. 💩');
       console.log(error);
     }
   });
+}
+
+function getAttachment() {
+  var attachments = [
+    {
+      pretext: getPreText(),
+      text: getText()
+    }
+  ];
+
+  return encodeURIComponent(JSON.stringify(attachments));
+}
+
+function getPreText() {
+  var pretext = '';
+
+  if (doneTasks.length === 1) {
+    pretext = 'New task done!';
+  } else {
+    pretext = 'New tasks done!';
+  }
+
+  return ':tada: ' + pretext + ' :tada:';
+}
+
+function getText() {
+  var text = '';
+
+  for (var i = 0; i < doneTasks.length; i++) {
+    text = text + '✅ ' + doneTasks[i] + '\n';
+  }
+
+  return text;
 }
