@@ -51,7 +51,7 @@ function sendToSlack(tasks) {
   var text = '';
 
   for (var i = 0; i < doneTasks.length; i++) {
-    text = text + '• ' + doneTasks[i] + '\n';
+    text = text + '✅ ' + doneTasks[i] + '\n';
   }
 
   var attachments = [
