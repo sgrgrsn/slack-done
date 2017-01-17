@@ -20,7 +20,7 @@
   "keywords": "slack, done, finish, tasks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sorenshg/slack-done.git"
+    "url": "https://github.com/sgrgrsn/slack-done.git"
   },
   "license": "ISC",
   "dependencies": {
